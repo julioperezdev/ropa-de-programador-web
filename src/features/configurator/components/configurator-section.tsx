@@ -26,13 +26,13 @@ export function ConfiguratorSection() {
         </p>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.02fr_1.18fr]" id="coleccion">
+      <div className="grid gap-6 xl:grid-cols-[1.18fr_0.92fr]" id="coleccion">
         <Card>
           <CardHeader className="border-b border-border/70 bg-white/70 pb-5">
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Paso 01</p>
             <CardTitle className="mt-2">Diseños disponibles</CardTitle>
           </CardHeader>
-          <CardContent className="p-6">
+          <CardContent className="p-5 lg:p-6">
             <DesignGrid designs={designs} onSelect={setSelectedDesign} selectedDesignId={selectedDesign.id} />
           </CardContent>
         </Card>

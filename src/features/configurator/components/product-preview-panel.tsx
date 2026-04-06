@@ -89,14 +89,16 @@ export function ProductPreviewPanel({ selectedDesign }: ProductPreviewPanelProps
         </p>
       </CardHeader>
 
-      <CardContent className="grid gap-8 p-6 lg:grid-cols-[0.86fr_1.14fr]">
-        <div className="space-y-4">
-          <MockupViewer
-            colorCode={selectedColor}
-            design={selectedDesign}
-            placement={selectedPlacement}
-            size="panel"
-          />
+      <CardContent className="grid gap-8 p-5 lg:min-h-[860px] lg:grid-cols-[1.32fr_0.68fr] lg:items-start lg:p-6">
+        <div className="space-y-4 lg:sticky lg:top-24">
+          <div className="flex justify-center rounded-[28px] border border-border/70 bg-[linear-gradient(180deg,#fbfdff_0%,#eff5f9_100%)] px-2 py-4 lg:px-4 lg:py-6">
+            <MockupViewer
+              colorCode={selectedColor}
+              design={selectedDesign}
+              placement={selectedPlacement}
+              size="panel"
+            />
+          </div>
 
           <div className="rounded-2xl border border-border/70 bg-muted/40 p-4">
             <div className="flex items-center justify-between gap-4">
@@ -109,7 +111,7 @@ export function ProductPreviewPanel({ selectedDesign }: ProductPreviewPanelProps
           </div>
         </div>
 
-        <div className="space-y-7">
+        <div className="space-y-6">
           <section className="space-y-3">
             <Label>Talle</Label>
             <SizeSelector selectedSize={selectedSize} onSelect={setSelectedSize} />

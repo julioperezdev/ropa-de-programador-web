@@ -5,7 +5,7 @@ export type ProductSize = "S" | "M" | "L" | "XL" | "XXL";
 export type ProductColorCode = "white" | "graphite" | "navy" | "ash";
 
 export type PreviewData = {
-  mockupMode: "2d";
+  mockupMode: "2d" | "3d";
   artworkUrl: string;
   colorCode: ProductColorCode;
   placement: PlacementCode;
