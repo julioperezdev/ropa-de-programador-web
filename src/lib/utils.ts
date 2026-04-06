@@ -58,7 +58,7 @@ export function createConfiguredProduct(
     ...input,
     unitPrice: basePrice,
     previewData: {
-      mockupMode: "2d",
+      mockupMode: "3d",
       artworkUrl: design.artworkUrl,
       colorCode: input.color,
       placement: input.placement,

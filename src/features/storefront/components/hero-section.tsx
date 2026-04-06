@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CreditCard, ShieldCheck, Truck } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -37,14 +38,28 @@ export function HeroSection({ design, price, colorCode }: HeroSectionProps) {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-20">
         <div className="relative z-10 flex flex-col justify-center">
           <Badge variant="accent" className="w-fit">
-            Primera versión del storefront
+            6 diseños reales integrados
           </Badge>
+          <div className="mt-6 flex items-center gap-3">
+            <div className="overflow-hidden rounded-full border border-white/70 bg-white p-1 shadow-soft">
+              <Image
+                alt="Logo de Ropa de Programador"
+                className="h-12 w-12 object-contain"
+                height={48}
+                src="/brand/logo-ropa-de-programador.png"
+                width={48}
+              />
+            </div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+              Colección Ropa de Programador
+            </p>
+          </div>
           <h1 className="mt-6 max-w-3xl font-heading text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            Remeras para programadores con una experiencia de compra clara y visual.
+            Remeras para programadores con diseños reales y un configurador listo para crecer.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-            Explorá diseños 2D, elegí talle, color y placement, y armá tu carrito sin salir de la misma
-            landing.
+            Explorá piezas como Java Mate, C# en obra, Storage, Tribute, Mapa Dev y Subte SQL. Elegí talle,
+            color y placement sin salir de la misma landing.
           </p>
 
           <div className="mt-8 flex flex-wrap items-end gap-4">
@@ -55,7 +70,7 @@ export function HeroSection({ design, price, colorCode }: HeroSectionProps) {
               </p>
             </div>
             <p className="max-w-xs text-sm text-muted-foreground">
-              Remera heavy cotton con diseño aplicado en frente, pecho o espalda.
+              Base unisex de algodón con impresión aplicada en frente, pecho o espalda.
             </p>
           </div>
 
