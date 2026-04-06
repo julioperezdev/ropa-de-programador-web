@@ -2,7 +2,15 @@ export type ProductStatus = "active" | "inactive" | "archived";
 export type DesignStatus = "active" | "inactive" | "archived";
 export type PlacementCode = "front-center" | "chest-left" | "back-center";
 export type ProductSize = "S" | "M" | "L" | "XL" | "XXL";
-export type ProductColorCode = "white" | "graphite" | "navy" | "ash";
+export type ProductColorCode =
+  | "white"
+  | "black"
+  | "gray-melange"
+  | "burgundy"
+  | "yellow"
+  | "french-blue"
+  | "navy"
+  | "benetton-green";
 
 export type PreviewData = {
   mockupMode: "2d" | "3d";
@@ -29,6 +37,8 @@ export type Design = {
   description: string;
   artworkUrl: string;
   thumbnailUrl: string;
+  thumbnailLayout?: "square" | "portrait";
+  thumbnailObjectPosition?: string;
   category: string;
   tags: string[];
   status: DesignStatus;
