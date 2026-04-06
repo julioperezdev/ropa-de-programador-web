@@ -56,8 +56,8 @@ export function ShippingForm() {
 
   return (
     <Card className="h-full">
-      <CardHeader className="border-b border-border/70 bg-white/70 pb-5">
-        <div className="flex items-start justify-between gap-3">
+      <CardHeader className="border-b border-border/70 bg-white/70 px-4 pb-5 pt-5 sm:px-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Formulario visual</p>
             <CardTitle className="mt-2">Datos de envío</CardTitle>
@@ -69,7 +69,7 @@ export function ShippingForm() {
         </div>
       </CardHeader>
 
-      <CardContent className="p-6">
+      <CardContent className="p-4 sm:p-6">
         <form className="space-y-5" onSubmit={handleSubmit}>
           <div className="grid gap-5 sm:grid-cols-2">
             {fields.map((field) => (
