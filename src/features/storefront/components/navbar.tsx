@@ -27,7 +27,7 @@ export function Navbar({ cartCount }: NavbarProps) {
             <p className="font-heading text-lg font-semibold tracking-tight text-foreground">
               Ropa de Programador
             </p>
-            <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Storefront</p>
+            <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">por Julioperez.dev</p>
           </div>
         </a>
 

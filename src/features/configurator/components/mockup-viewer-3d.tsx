@@ -31,31 +31,39 @@ const modelScale = {
 const placementConfig: Record<
   PlacementCode,
   {
-    shirtRotationY: number;
+    designFacingRotationY: number;
     decalPosition: [number, number, number];
     decalRotation: [number, number, number];
     decalScale: [number, number, number];
   }
 > = {
   "front-center": {
-    shirtRotationY: 0,
+    designFacingRotationY: 0,
     decalPosition: [0, 0.08, 0.13],
     decalRotation: [0, 0, 0],
     decalScale: [0.16, 0.16, 0.16],
   },
   "chest-left": {
-    shirtRotationY: 0,
+    designFacingRotationY: 0,
     decalPosition: [-0.11, 0.13, 0.13],
     decalRotation: [0, 0, -0.08],
     decalScale: [0.08, 0.08, 0.08],
   },
   "back-center": {
-    shirtRotationY: Math.PI,
+    designFacingRotationY: Math.PI,
     decalPosition: [0, 0.1, 0.115],
     decalRotation: [0, 0, 0],
     decalScale: [0.14, 0.14, 0.14],
   },
 };
+
+const slowAngularSpeed = 0.42;
+const fastAngularSpeed = 1.2;
+const speedSmoothing = 3.2;
+
+function normalizeAngle(angle: number) {
+  return Math.atan2(Math.sin(angle), Math.cos(angle));
+}
 
 function LoadingFallback({ size = "panel", highlightLabel }: Pick<MockupViewer3DProps, "size" | "highlightLabel">) {
   return (
@@ -90,6 +98,8 @@ function ShirtModel({
   const texture = useTexture(artworkUrl);
   const color = colorOptions.find((option) => option.code === colorCode) ?? colorOptions[1];
   const placementMeta = placementConfig[placement];
+  const rotationRef = useRef(placementMeta.designFacingRotationY);
+  const angularSpeedRef = useRef(slowAngularSpeed);
 
   const { shirtMesh, center, fitScale } = useMemo<{
     shirtMesh: THREE.Mesh<THREE.BufferGeometry, THREE.Material | THREE.Material[]> | null;
@@ -160,6 +170,11 @@ function ShirtModel({
     texture.needsUpdate = true;
   }, [texture]);
 
+  useEffect(() => {
+    rotationRef.current = placementMeta.designFacingRotationY;
+    angularSpeedRef.current = slowAngularSpeed;
+  }, [placementMeta.designFacingRotationY]);
+
   const shirtGeometry = shirtMesh?.geometry as THREE.BufferGeometry | undefined;
   const shirtMaterial = shirtMesh?.material as THREE.Material | THREE.Material[] | undefined;
 
@@ -167,15 +182,29 @@ function ShirtModel({
     return null;
   }
 
-  useFrame(() => {
+  useFrame((_, delta) => {
     if (!groupRef.current) {
       return;
     }
 
-    const elapsed = performance.now() * 0.00025;
+    const relativeAngle = normalizeAngle(rotationRef.current - placementMeta.designFacingRotationY);
+    const isFrontVisible =
+      relativeAngle > -Math.PI / 2 &&
+      relativeAngle < Math.PI / 2;
+    const targetSpeed = isFrontVisible ? slowAngularSpeed : fastAngularSpeed;
+
+    angularSpeedRef.current = THREE.MathUtils.damp(
+      angularSpeedRef.current,
+      targetSpeed,
+      speedSmoothing,
+      delta,
+    );
+
+    rotationRef.current += angularSpeedRef.current * delta;
+
     groupRef.current.rotation.x = 0;
     groupRef.current.rotation.z = 0;
-    groupRef.current.rotation.y = placementMeta.shirtRotationY + elapsed;
+    groupRef.current.rotation.y = rotationRef.current;
   });
 
   return (
