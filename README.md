@@ -1,4 +1,4 @@
-# RDP Storefront
+# Ropa de programador
 
 Frontend público del ecommerce de `Ropa de Programador`, construido como base reusable para conectar backend más adelante.
 
