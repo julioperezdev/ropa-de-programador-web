@@ -1,0 +1,7 @@
+<svg width="320" height="260" viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="260" rx="24" fill="#F8FAFC"/>
+  <circle cx="160" cy="104" r="68" fill="#ECFEFF"/>
+  <path d="M118 105L146 133L204 77" stroke="#0891B2" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="214" fill="#0F172A" font-family="Arial, sans-serif" font-size="28" font-weight="700">ZERO BUGS</text>
+  <text x="86" y="236" fill="#475569" font-family="Arial, sans-serif" font-size="12">Release confidence for real teams</text>
+</svg>

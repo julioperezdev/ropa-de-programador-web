@@ -1,0 +1,187 @@
+import type {
+  ColorOption,
+  Design,
+  Placement,
+  Product,
+  ProductVariant,
+} from "@/types/domain";
+
+export const baseProduct: Product = {
+  id: "prod_basic_tee",
+  slug: "remera-heavy-cotton",
+  name: "Remera heavy cotton",
+  description:
+    "Remera unisex de peso medio con base premium para estampados de alta definición.",
+  basePrice: 35,
+  supportedPlacements: ["front-center", "chest-left", "back-center"],
+  status: "active",
+  thumbnailUrl: "/products/basic-tee-thumbnail.svg",
+};
+
+export const placements: Placement[] = [
+  {
+    code: "front-center",
+    name: "Frente centrado",
+    description: "El diseño principal se aplica al centro del pecho.",
+    active: true,
+  },
+  {
+    code: "chest-left",
+    name: "Pecho izquierdo",
+    description: "Versión discreta, ideal para una identidad más sutil.",
+    active: true,
+  },
+  {
+    code: "back-center",
+    name: "Espalda centrada",
+    description: "Lleva el arte a la espalda con mayor presencia visual.",
+    active: true,
+  },
+];
+
+export const colorOptions: ColorOption[] = [
+  {
+    code: "white",
+    name: "Blanco",
+    hex: "#F8FAFC",
+    shirtFill: "#F8FAFC",
+    shirtShadow: "#CBD5E1",
+    shirtStroke: "#D8DEE8",
+  },
+  {
+    code: "graphite",
+    name: "Grafito",
+    hex: "#1F2937",
+    shirtFill: "#1F2937",
+    shirtShadow: "#111827",
+    shirtStroke: "#374151",
+  },
+  {
+    code: "navy",
+    name: "Azul noche",
+    hex: "#172554",
+    shirtFill: "#172554",
+    shirtShadow: "#0F172A",
+    shirtStroke: "#1D4ED8",
+  },
+  {
+    code: "ash",
+    name: "Gris humo",
+    hex: "#CBD5E1",
+    shirtFill: "#CBD5E1",
+    shirtShadow: "#94A3B8",
+    shirtStroke: "#A8B4C7",
+  },
+];
+
+export const productVariants: ProductVariant[] = [
+  {
+    id: "variant_s",
+    productId: baseProduct.id,
+    size: "S",
+    allowedColors: ["white", "graphite", "navy"],
+    stock: 12,
+    status: "active",
+  },
+  {
+    id: "variant_m",
+    productId: baseProduct.id,
+    size: "M",
+    allowedColors: ["white", "graphite", "navy", "ash"],
+    stock: 18,
+    status: "active",
+  },
+  {
+    id: "variant_l",
+    productId: baseProduct.id,
+    size: "L",
+    allowedColors: ["white", "graphite", "navy", "ash"],
+    stock: 22,
+    status: "active",
+  },
+  {
+    id: "variant_xl",
+    productId: baseProduct.id,
+    size: "XL",
+    allowedColors: ["graphite", "navy", "ash"],
+    stock: 10,
+    status: "active",
+  },
+  {
+    id: "variant_xxl",
+    productId: baseProduct.id,
+    size: "XXL",
+    allowedColors: ["graphite", "navy"],
+    stock: 8,
+    status: "active",
+  },
+];
+
+export const designs: Design[] = [
+  {
+    id: "design_hello_world",
+    slug: "hello-world",
+    name: "Hello World",
+    description: "Tipografía limpia con guiño al primer programa de todo dev.",
+    artworkUrl: "/designs/hello-world.svg",
+    thumbnailUrl: "/designs/hello-world.svg",
+    category: "Typography",
+    tags: ["minimal", "developer", "classic"],
+    status: "active",
+  },
+  {
+    id: "design_type_safe",
+    slug: "type-safe",
+    name: "Type Safe",
+    description: "Composición inspirada en tipado estático y contratos claros.",
+    artworkUrl: "/designs/type-safe.svg",
+    thumbnailUrl: "/designs/type-safe.svg",
+    category: "Engineering",
+    tags: ["typescript", "clean-code", "systems"],
+    status: "active",
+  },
+  {
+    id: "design_clean_commit",
+    slug: "clean-commit",
+    name: "Clean Commit",
+    description: "Estética editorial basada en terminal y disciplina de versionado.",
+    artworkUrl: "/designs/clean-commit.svg",
+    thumbnailUrl: "/designs/clean-commit.svg",
+    category: "Git",
+    tags: ["git", "workflow", "terminal"],
+    status: "active",
+  },
+  {
+    id: "design_css_grid",
+    slug: "css-grid",
+    name: "CSS Grid",
+    description: "Patrón geométrico para quienes viven ordenando interfaces.",
+    artworkUrl: "/designs/css-grid.svg",
+    thumbnailUrl: "/designs/css-grid.svg",
+    category: "Frontend",
+    tags: ["layout", "frontend", "css"],
+    status: "active",
+  },
+  {
+    id: "design_zero_bugs",
+    slug: "zero-bugs",
+    name: "Zero Bugs",
+    description: "Visual técnico con tono optimista para equipos que cuidan calidad.",
+    artworkUrl: "/designs/zero-bugs.svg",
+    thumbnailUrl: "/designs/zero-bugs.svg",
+    category: "Quality",
+    tags: ["qa", "testing", "release"],
+    status: "active",
+  },
+  {
+    id: "design_ship_mode",
+    slug: "ship-mode",
+    name: "Ship Mode",
+    description: "Gráfica de despliegue pensada para lanzamientos de producto.",
+    artworkUrl: "/designs/ship-mode.svg",
+    thumbnailUrl: "/designs/ship-mode.svg",
+    category: "DevOps",
+    tags: ["deploy", "release", "ops"],
+    status: "active",
+  },
+];
