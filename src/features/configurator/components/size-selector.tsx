@@ -10,11 +10,11 @@ type SizeSelectorProps = {
 
 export function SizeSelector({ selectedSize, onSelect }: SizeSelectorProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap">
       {productVariants.map((variant) => (
         <Button
           key={variant.id}
-          className={cn("min-w-12", selectedSize === variant.size && "shadow-md")}
+          className={cn("min-w-0 sm:min-w-12", selectedSize === variant.size && "shadow-md")}
           onClick={() => onSelect(variant.size)}
           size="sm"
           type="button"

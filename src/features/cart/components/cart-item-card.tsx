@@ -25,13 +25,13 @@ export function CartItemCard({ item, onIncrease, onDecrease, onRemove }: CartIte
       <div className="flex flex-col gap-4 sm:flex-row">
         <CartItemPreview colorCode={item.configuredProduct.color} design={design} />
 
-        <div className="flex flex-1 flex-col gap-4">
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div>
+        <div className="flex min-w-0 flex-1 flex-col gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
+            <div className="min-w-0">
               <h3 className="font-heading text-lg font-semibold text-foreground">{design.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{design.description}</p>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground">{design.description}</p>
             </div>
-            <Badge variant="outline">{formatCurrency(item.unitPrice)}</Badge>
+            <Badge className="w-fit" variant="outline">{formatCurrency(item.unitPrice)}</Badge>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -40,7 +40,7 @@ export function CartItemCard({ item, onIncrease, onDecrease, onRemove }: CartIte
             <Badge variant="secondary">{placement?.name ?? item.configuredProduct.placement}</Badge>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
             <div className="flex items-center gap-2">
               <Button onClick={onDecrease} size="sm" type="button" variant="outline">
                 -
@@ -51,7 +51,7 @@ export function CartItemCard({ item, onIncrease, onDecrease, onRemove }: CartIte
               </Button>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3 sm:justify-end">
               <p className="text-sm text-muted-foreground">Subtotal</p>
               <p className="font-heading text-lg font-semibold">{formatCurrency(item.subtotal)}</p>
               <Button onClick={onRemove} size="icon" type="button" variant="ghost">

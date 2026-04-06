@@ -33,7 +33,7 @@ export function ColorSelector({ selectedColor, allowedColors, onSelect }: ColorS
       <button
         key={color.code}
         className={cn(
-          "flex flex-col items-center gap-2 rounded-2xl border bg-white px-3 py-3 text-center transition-all",
+          "flex min-w-0 flex-col items-center gap-2 rounded-2xl border bg-white px-2.5 py-3 text-center transition-all sm:px-3",
           isSelected && "border-primary ring-2 ring-primary/20",
           !isSelected && "border-border hover:border-primary/30",
           !isAvailable && "cursor-not-allowed opacity-45",
@@ -43,10 +43,10 @@ export function ColorSelector({ selectedColor, allowedColors, onSelect }: ColorS
         type="button"
       >
         <span
-          className="h-12 w-12 rounded-full border border-black/10 shadow-sm"
+          className="h-10 w-10 rounded-full border border-black/10 shadow-sm sm:h-12 sm:w-12"
           style={{ backgroundColor: color.hex }}
         />
-        <span className="min-h-[2.5rem] text-xs font-semibold leading-5 text-foreground">
+        <span className="min-h-[2.5rem] break-words text-[11px] font-semibold leading-4 text-foreground sm:text-xs sm:leading-5">
           {color.name}
         </span>
       </button>
@@ -59,8 +59,8 @@ export function ColorSelector({ selectedColor, allowedColors, onSelect }: ColorS
         {featuredColors.map(renderColorButton)}
       </div>
 
-      <div className="flex items-center justify-between gap-4">
-        <p className="text-xs text-muted-foreground">
+      <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <p className="text-xs leading-5 text-muted-foreground">
           Se muestran primero los colores más usados.
         </p>
         <button

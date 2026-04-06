@@ -30,7 +30,7 @@ export function CartSummary() {
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-6 p-6">
+      <CardContent className="space-y-6 p-4 sm:p-6">
         {cartItems.length === 0 ? (
           <div className="rounded-3xl border border-dashed border-border bg-muted/30 px-6 py-10 text-center">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-soft">
@@ -38,7 +38,7 @@ export function CartSummary() {
             </div>
             <h3 className="mt-5 font-heading text-xl font-semibold text-foreground">Todavía no agregaste productos</h3>
             <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              Elegí un diseño, configurá talle, color y placement, y el carrito se actualizará acá mismo.
+              Elegí un diseño, configurá talle, color y cantidad, y el carrito se actualizará acá mismo.
             </p>
           </div>
         ) : (
@@ -55,7 +55,7 @@ export function CartSummary() {
           </div>
         )}
 
-        <div className="rounded-3xl bg-slate-950 p-5 text-white">
+        <div className="rounded-3xl bg-slate-950 p-4 text-white sm:p-5">
           <div className="flex items-center justify-between text-sm text-slate-300">
             <span>Subtotal</span>
             <span>{formatCurrency(summary.subtotal)}</span>
@@ -64,9 +64,9 @@ export function CartSummary() {
             <span>Envío</span>
             <span>A confirmar</span>
           </div>
-          <div className="mt-5 flex items-end justify-between border-t border-white/10 pt-4">
+          <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-4 sm:flex-row sm:items-end sm:justify-between">
             <span className="font-heading text-lg font-semibold">Total estimado</span>
-            <span className="font-heading text-3xl font-semibold">{formatCurrency(summary.total)}</span>
+            <span className="font-heading text-2xl font-semibold sm:text-3xl">{formatCurrency(summary.total)}</span>
           </div>
         </div>
 

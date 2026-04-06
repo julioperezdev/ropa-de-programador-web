@@ -14,13 +14,13 @@ export function ConfiguratorSection() {
   const selectedDesign = designs.find((design) => design.id === selectedDesignId) ?? designs[0];
 
   return (
-    <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8" id="configurador">
+    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-20 lg:px-8" id="configurador">
       <div className="mb-8 max-w-3xl">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary">Configurador</p>
-        <h2 className="mt-4 font-heading text-4xl font-semibold tracking-tight text-foreground">
+        <h2 className="mt-4 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           Elegí uno de los seis diseños reales y construí una configuración lista para comprar.
         </h2>
-        <p className="mt-4 text-lg leading-8 text-muted-foreground">
+        <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
           La composición mantiene la estructura validada del baseline: grid de diseños a la izquierda y mockup
           con controles a la derecha.
         </p>

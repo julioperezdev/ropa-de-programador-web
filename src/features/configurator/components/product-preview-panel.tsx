@@ -73,7 +73,7 @@ export function ProductPreviewPanel({ selectedDesign }: ProductPreviewPanelProps
 
   return (
     <Card className="overflow-hidden">
-      <CardHeader className="space-y-4 border-b border-border/70 bg-white/70 pb-5">
+      <CardHeader className="space-y-4 border-b border-border/70 bg-white/70 px-4 pb-5 pt-5 sm:px-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Paso 02</p>
@@ -87,9 +87,9 @@ export function ProductPreviewPanel({ selectedDesign }: ProductPreviewPanelProps
         </p>
       </CardHeader>
 
-      <CardContent className="space-y-6 p-5 lg:p-6">
+      <CardContent className="space-y-5 p-4 sm:space-y-6 sm:p-5 lg:p-6">
         <div className="space-y-4">
-          <div className="flex justify-center rounded-[28px] border border-border/70 bg-[linear-gradient(180deg,#fbfdff_0%,#eff5f9_100%)] px-2 py-4 lg:px-4 lg:py-6">
+          <div className="flex justify-center rounded-[24px] border border-border/70 bg-[linear-gradient(180deg,#fbfdff_0%,#eff5f9_100%)] px-2 py-3 sm:rounded-[28px] sm:px-3 sm:py-4 lg:px-4 lg:py-6">
             <MockupViewer
               colorCode={selectedColor}
               design={selectedDesign}
@@ -99,17 +99,17 @@ export function ProductPreviewPanel({ selectedDesign }: ProductPreviewPanelProps
           </div>
 
           <div className="rounded-2xl border border-border/70 bg-muted/40 p-4">
-            <div className="flex items-center justify-between gap-4">
-              <div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+              <div className="min-w-0">
                 <p className="font-heading text-lg font-semibold text-foreground">{selectedDesign.name}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{selectedDesign.description}</p>
               </div>
-              <Badge variant="outline">Frente centrado</Badge>
+              <Badge className="w-fit" variant="outline">Frente centrado</Badge>
             </div>
           </div>
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-[0.85fr_1.15fr]">
+        <div className="grid gap-5 xl:grid-cols-[0.85fr_1.15fr] xl:gap-6">
           <section className="space-y-3">
             <Label>Talle</Label>
             <SizeSelector selectedSize={selectedSize} onSelect={setSelectedSize} />
@@ -135,7 +135,7 @@ export function ProductPreviewPanel({ selectedDesign }: ProductPreviewPanelProps
             />
           </div>
 
-          <div className="w-full max-w-md">
+          <div className="w-full lg:max-w-md">
             <AddToCartButton added={added} disabled={!isValidConfiguration} onClick={handleAddToCart} />
             <p className="mt-3 text-xs text-muted-foreground">
               {added ? (
