@@ -55,11 +55,10 @@ export function HeroSection({ design, price, colorCode }: HeroSectionProps) {
             </p>
           </div>
           <h1 className="mt-6 max-w-3xl font-heading text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            Vestite como el programador que sos en 3 clicks.
+            Vestite como el programador que sos
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-            Explorá piezas como Java Mate, C# en obra, Storage, Tribute, Mapa Dev y Subte SQL. Elegí talle,
-            color y placement sin salir de la misma landing.
+            Explorá diseños como Java Mate, C# en obra, Storage, Tribute, Mapa Dev y Subte SQL. Elegí talle, color y ubicación del estampado en el momento
           </p>
 
           <div className="mt-8 flex flex-wrap items-end gap-4">
@@ -76,7 +75,7 @@ export function HeroSection({ design, price, colorCode }: HeroSectionProps) {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button asChild size="lg">
-              <a href="#configurador">Configurar remera</a>
+              <a href="#configurador">Empezá a elegir</a>
             </Button>
             <Button asChild variant="outline" size="lg">
               <a href="#compra">Ver carrito y envío</a>
