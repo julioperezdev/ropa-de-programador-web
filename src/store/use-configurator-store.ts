@@ -23,17 +23,21 @@ type ConfiguratorState = {
 
 const initialVariant = getVariantBySize(productVariants, "M");
 
+function getPreferredColor(colors: ProductColorCode[]) {
+  return colors.includes("graphite") ? "graphite" : colors[0];
+}
+
 export const useConfiguratorStore = create<ConfiguratorState>((set) => ({
   selectedDesignId: designs[0]?.id ?? "",
   selectedSize: "M",
-  selectedColor: initialVariant?.allowedColors[0] ?? "graphite",
+  selectedColor: initialVariant ? getPreferredColor(initialVariant.allowedColors) : "graphite",
   selectedPlacement: baseProduct.supportedPlacements[0] ?? placements[0].code,
   selectedQuantity: 1,
   setSelectedDesign: (selectedDesignId) => set({ selectedDesignId }),
   setSelectedSize: (selectedSize) =>
     set((state) => {
       const variant = getVariantBySize(productVariants, selectedSize);
-      const fallbackColor = variant?.allowedColors[0] ?? state.selectedColor;
+      const fallbackColor = variant ? getPreferredColor(variant.allowedColors) : state.selectedColor;
       const selectedColor = variant?.allowedColors.includes(state.selectedColor)
         ? state.selectedColor
         : fallbackColor;
