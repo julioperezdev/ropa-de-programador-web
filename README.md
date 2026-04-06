@@ -1,5 +1,35 @@
 # README.md
 
+## Quick start
+
+Este workspace ahora incluye una primera implementación funcional del **storefront frontend** con:
+
+- Next.js App Router
+- React + TypeScript
+- Tailwind CSS
+- componentes estilo shadcn/ui
+- Zustand
+- React Hook Form + Zod
+- Lucide React
+
+### Comandos
+
+```bash
+npm install
+npm run dev
+```
+
+Abrí [http://localhost:3000](http://localhost:3000).
+
+### Scripts disponibles
+
+```bash
+npm run dev
+npm run build
+npm run start
+npm run typecheck
+```
+
 ## 1. Resumen del proyecto
 
 Este proyecto busca construir un ecommerce de ropa temática para programadores, partiendo de un proyecto legacy realizado años atrás y rediseñándolo desde cero con una arquitectura, experiencia de usuario y documentación mucho más claras.
