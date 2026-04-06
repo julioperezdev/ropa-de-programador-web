@@ -84,8 +84,8 @@ export function ProductPreviewPanel({ selectedDesign }: ProductPreviewPanelProps
           <Badge>{formatCurrency(baseProduct.basePrice)}</Badge>
         </div>
         <p className="max-w-xl text-sm leading-6 text-muted-foreground">
-          Seleccioná el talle, color y placement para construir un `ConfiguredProduct` consistente antes de
-          enviarlo al carrito.
+          Seleccioná talle, color y placement para preparar una configuración consistente del producto antes de
+          enviarla al carrito.
         </p>
       </CardHeader>
 

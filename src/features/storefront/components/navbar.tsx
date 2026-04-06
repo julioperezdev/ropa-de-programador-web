@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -12,8 +13,22 @@ export function Navbar({ cartCount }: NavbarProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-white/60 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <a href="#" className="font-heading text-xl font-semibold tracking-tight text-foreground">
-          RDP Storefront
+        <a href="#" className="flex items-center gap-3">
+          <div className="overflow-hidden rounded-full border border-border bg-white p-1 shadow-sm">
+            <Image
+              alt="Logo Ropa de Programador"
+              className="h-10 w-10 object-contain"
+              height={40}
+              src="/brand/logo-ropa-de-programador.png"
+              width={40}
+            />
+          </div>
+          <div>
+            <p className="font-heading text-lg font-semibold tracking-tight text-foreground">
+              Ropa de Programador
+            </p>
+            <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Storefront</p>
+          </div>
         </a>
 
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
