@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Storefront | Ropa para programadores",
+  title: "Ropa de programador: Remeras by julioperez.dev",
   description:
-    "Frontend storefront para ecommerce de ropa temática para programadores, con configurador visual, carrito local y formulario de envío.",
+    "Ropa de programador, ecommerce de ropa temática para programadores, con configurador visual, carrito local y formulario de envío.",
 };
 
 export default function RootLayout({

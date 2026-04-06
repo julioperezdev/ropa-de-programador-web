@@ -55,7 +55,7 @@ export function HeroSection({ design, price, colorCode }: HeroSectionProps) {
             </p>
           </div>
           <h1 className="mt-6 max-w-3xl font-heading text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            Remeras para programadores con diseños reales y un configurador listo para crecer.
+            Vestite como el programador que sos en 3 clicks.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
             Explorá piezas como Java Mate, C# en obra, Storage, Tribute, Mapa Dev y Subte SQL. Elegí talle,
@@ -70,7 +70,7 @@ export function HeroSection({ design, price, colorCode }: HeroSectionProps) {
               </p>
             </div>
             <p className="max-w-xs text-sm text-muted-foreground">
-              Base unisex de algodón con impresión aplicada en frente, pecho o espalda.
+              Base unisex de algodón con impresión aplicada en frente.
             </p>
           </div>
 
